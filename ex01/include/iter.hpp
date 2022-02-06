@@ -18,7 +18,7 @@ void iter(T* array, std::size_t len, void(*func)(T&)) {
 
 template <typename T>
 void doubleValue(T& val) {
-  val = val * 2;
+  val += val;
 }
 
 #endif // ITER_HPP
