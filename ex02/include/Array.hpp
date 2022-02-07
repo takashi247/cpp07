@@ -1,11 +1,15 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
+#include <stddef.h>
+
+#include <exception>
+
 template <typename T>
 class Array {
  public:
   Array() : size_() {
-    array_ = NULL:
+    array_ = NULL;
   }
 
   explicit Array(unsigned int n) : size_(n) {
@@ -31,7 +35,24 @@ class Array {
 
   virtual ~Array(){ delete[] array_; }
 
+  unsigned int size() const { return size_; }
+
+  T& operator[](unsigned int i) {
+    if (!is_valid_index(i)) {
+      throw std::exception();
+    }
+    return array_[i];
+  }
+
+  const T& operator[](unsigned int i) const {
+    if (!is_valid_index(i)) {
+      throw std::exception();
+    }
+    return array_[i];
+  }
+
  private:
+  bool is_valid_index(unsigned int idx) { return idx < size_; }
   unsigned int size_;
   T* array_;
 
