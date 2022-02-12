@@ -21,31 +21,58 @@ int main() {
     std::cout << "invalid index" << std::endl;
   }
 
-  // test normal case
-  std::cout << "\n---int array test---\n" << std::endl;
+  {
+    // test integer case
+    std::cout << "\n---int array test---\n" << std::endl;
 
-  Array<int> arr(10);
-  Array<int> arr_cpy(arr);
-  Array<int> arr_assign;
-  arr_assign = arr;
+    Array<int> arr(10);
+    Array<int> arr_cpy(arr);
+    Array<int> arr_assign;
+    arr_assign = arr;
 
-  std::cout << "size of arr: " << arr.size() << std::endl;
-  std::cout << "size of arr_cpy: " << arr_cpy.size() << std::endl;
-  std::cout << "size of arr_assign: " << arr_assign.size() << std::endl;
+    std::cout << "size of arr: " << arr.size() << std::endl;
+    std::cout << "size of arr_cpy: " << arr_cpy.size() << std::endl;
+    std::cout << "size of arr_assign: " << arr_assign.size() << std::endl;
 
-  try {
-    for (unsigned int i = 0; i < arr.size() + 1; ++i) {
-      arr[i] = i;
-      arr_cpy[i] = i + 10;
-      arr_assign[i] = i + 100;
-      std::cout << "arr["  << i << "] = " << arr[i] << "  "
-                << "arr_cpy[" << i << "] = " << arr_cpy[i] << "   "
-                << "arr_assign[" << i << "] = " << arr_assign[i] << std::endl;
+    try {
+      for (unsigned int i = 0; i < arr.size() + 1; ++i) {
+        arr[i] = i;
+        arr_cpy[i] = i + 10;
+        arr_assign[i] = i + 100;
+        std::cout << "arr["  << i << "] = " << arr[i] << "  "
+                  << "arr_cpy[" << i << "] = " << arr_cpy[i] << "   "
+                  << "arr_assign[" << i << "] = " << arr_assign[i] << std::endl;
+      }
+    } catch (const std::exception&) {
+      std::cout << "invalid index" << std::endl;
     }
-  } catch (const std::exception&) {
-    std::cout << "invalid index" << std::endl;
   }
+  {
+    // test floating point case
+    std::cout << "\n---double array test---\n" << std::endl;
 
+    Array<double> arr(10);
+    Array<double> arr_cpy(arr);
+    Array<double> arr_assign;
+    arr_assign = arr;
+
+    std::cout << "size of arr: " << arr.size() << std::endl;
+    std::cout << "size of arr_cpy: " << arr_cpy.size() << std::endl;
+    std::cout << "size of arr_assign: " << arr_assign.size() << std::endl;
+
+    try {
+      for (unsigned int i = 0; i < arr.size() + 1; ++i) {
+        arr[i] = i + 0.1;
+        arr_cpy[i] = i + 10.1;
+        arr_assign[i] = i + 100.1;
+        std::cout << "arr["  << i << "] = " << arr[i] << "  "
+                  << "arr_cpy[" << i << "] = " << arr_cpy[i] << "   "
+                  << "arr_assign[" << i << "] = " << arr_assign[i] << std::endl;
+      }
+    } catch (const std::exception&) {
+      std::cout << "invalid index" << std::endl;
+    }
+  }
   // test array of string class
   std::cout << "\n---string array test---\n" << std::endl;
 
