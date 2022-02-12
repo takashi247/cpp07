@@ -16,16 +16,18 @@ class Array {
     array_ = new T[size_];
   }
 
-  Array(const Array<T> &other) : size_(other.size_) {
+  Array(const Array<T> &other) : size_(other.size()) {
     array_ = new T[size_];
     *this = other;
   }
 
   Array &operator=(const Array<T> &other) {
     if (this != &other) {
-      delete[] array_;
-      size_ = other.size_;
-      array_ = new T[size_];
+      if (size_ != other.size()) {
+        delete[] array_;
+        size_ = other.size();
+        array_ = new T[size_];
+      }
     }
     for (unsigned int i = 0; i < size_; ++i) {
       array_[i] = other.array_[i];
