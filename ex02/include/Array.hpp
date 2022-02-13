@@ -8,11 +8,7 @@
 template <typename T>
 class Array {
  public:
-  Array() : size_() {
-    array_ = NULL;
-  }
-
-  explicit Array(unsigned int n) : size_(n) {
+  explicit Array(unsigned int n = 0) : size_(n) {
     array_ = new T[size_];
   }
 
