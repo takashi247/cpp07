@@ -17,8 +17,8 @@ int main() {
     std::cout << "size of arr_empty_cpy: " << arr_empty_cpy.size() << std::endl;
     std::cout << "size of arr_empty_assign: " << arr_empty_assign.size() << std::endl;
     arr_empty[0] = 0;
-  } catch (const std::exception&) {
-    std::cout << "invalid index" << std::endl;
+  } catch (const std::exception& e) {
+    std::cout << e.what() << std::endl;
   }
 
   {
@@ -43,8 +43,8 @@ int main() {
                   << "arr_cpy[" << i << "] = " << arr_cpy[i] << "   "
                   << "arr_assign[" << i << "] = " << arr_assign[i] << std::endl;
       }
-    } catch (const std::exception&) {
-      std::cout << "invalid index" << std::endl;
+    } catch (const std::exception& e) {
+      std::cout << e.what() << std::endl;
     }
   }
   {
@@ -69,8 +69,8 @@ int main() {
                   << "arr_cpy[" << i << "] = " << arr_cpy[i] << "   "
                   << "arr_assign[" << i << "] = " << arr_assign[i] << std::endl;
       }
-    } catch (const std::exception&) {
-      std::cout << "invalid index" << std::endl;
+    } catch (const std::exception& e) {
+      std::cout << e.what() << std::endl;
     }
   }
   // test array of string class
@@ -94,9 +94,10 @@ int main() {
                 << "arr_cpy[" << i << "] = " << arr_str_cpy[i] << "   "
                 << "arr_assign[" << i << "] = " << arr_str_assign[i] << std::endl;
     }
-  } catch (const std::exception&) {
-    std::cout << "invalid index" << std::endl;
+  } catch (const std::exception& e) {
+    std::cout << e.what() << std::endl;
   }
+  std::cout << std::endl;
 }
 
 #ifdef LEAKS

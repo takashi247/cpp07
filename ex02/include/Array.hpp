@@ -1,9 +1,7 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
-#include <stddef.h>
-
-#include <exception>
+#include <stdexcept>
 
 template <typename T>
 class Array {
@@ -37,14 +35,14 @@ class Array {
 
   T& operator[](unsigned int i) {
     if (!is_valid_index(i)) {
-      throw std::exception();
+      throw std::out_of_range("Invalid index");
     }
     return array_[i];
   }
 
   const T& operator[](unsigned int i) const {
     if (!is_valid_index(i)) {
-      throw std::exception();
+      throw std::out_of_range("Invalid index");
     }
     return array_[i];
   }
