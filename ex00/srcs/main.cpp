@@ -9,13 +9,15 @@ void printHeader(std::string header) {
 
 void testAdditional() {
   printHeader("Start char tests");
-  ::tester<char>('a', 'b');
+  tester<char>('a', 'b');
   printHeader("Start float tests");
-  ::tester<float>(-4.2f, 4.2f);
+  tester<float>(-4.2f, 4.2f);
   printHeader("Start double tests");
-  ::tester<double>(-4.2e-200, 4.2e200);
+  tester<double>(-4.2e-200, 4.2e200);
+  printHeader("Start const string tests");
+  tester<std::string>("abcde", "fghij");
   printHeader("Start boolean tests");
-  ::tester<bool>(false, true);
+  tester<bool>(false, true);
 }
 
 void testSubject() {
