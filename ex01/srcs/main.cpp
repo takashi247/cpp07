@@ -16,11 +16,11 @@ int main() {
       array[i] = '!' + static_cast<char>(i);
     }
     std::cout << "Original array: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
-    ::iter(array, array_size, doubleValue);
+    iter(array, array_size, doubleValue);
     std::cout << "After doubled: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
   }
   {
@@ -30,11 +30,11 @@ int main() {
       array[i] = i + 1;
     }
     std::cout << "Original array: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
-    ::iter(array, array_size, doubleValue);
+    iter(array, array_size, doubleValue);
     std::cout << "After doubled: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
   }
   {
@@ -44,11 +44,11 @@ int main() {
       array[i] = static_cast<float>(i) + 0.2f;
     }
     std::cout << "Original array: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
-    ::iter(array, array_size, doubleValue);
+    iter(array, array_size, doubleValue);
     std::cout << "After doubled: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
   }
   {
@@ -60,11 +60,11 @@ int main() {
       array[i] = ss.str();
     }
     std::cout << "Original array: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
-    ::iter(array, array_size, doubleValue);
+    iter(array, array_size, doubleValue);
     std::cout << "After doubled: ";
-    ::iter(array, array_size, ::printValue);
+    iter(array, array_size, printValue);
     std::cout << std::endl;
   }
   std::cout << std::endl;
